@@ -95,10 +95,18 @@ def main():
     print(str(runtime_graph[0]) + ", " +  str(runtime_graph[1]))
     plt.plot(runtime_graph[0], runtime_graph[1], label = "runtime")
     plt.xlabel('nodes')
-    plt.ylabel('runtime (nanoseconds)')
+    plt.ylabel('runtime (microseconds)')
     plt.title ('runtime')
     plt.legend()
     plt.savefig("runtime.png")
+
+    ax = plt.gca()
+    # Set x logaritmic
+    ax.set_xscale('log')
+
+    plt.savefig("runtime_log.png")
+
+
 
 
 
